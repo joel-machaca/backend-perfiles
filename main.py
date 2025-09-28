@@ -3,6 +3,7 @@ from routers import profiles, auth
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from database.db import Base,engine
+import os
 
 
 app = FastAPI()
@@ -11,8 +12,9 @@ Base.metadata.create_all(bind=engine)
 
 load_dotenv()
 
+FRONTEND_URL=os.getenv("FRONTEND_URL")
 
-origins=["https://manejo-de-perfiles-profesionales.vercel.app"]
+origins=[FRONTEND_URL]
 
 app.add_middleware(
     CORSMiddleware,
