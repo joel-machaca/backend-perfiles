@@ -34,14 +34,14 @@ def create_profiles(
     # Subir foto principal a Supabase
     principal_data = foto_principal.file.read()
     supabase.storage.from_('uploads').upload(foto_principal.filename, principal_data)
-    foto_url = supabase.storage.from_('uploads').get_public_url(foto_principal.filename).public_url
+    foto_url = supabase.storage.from_('uploads').get_public_url(foto_principal.filename)
 
     # Subir galería
     galeria_urls = []
     for img in galeria:
         data = img.file.read()
         supabase.storage.from_('uploads').upload(img.filename, data)
-        galeria_urls.append(supabase.storage.from_('uploads').get_public_url(img.filename).public_url)
+        galeria_urls.append(supabase.storage.from_('uploads').get_public_url(img.filename))
 
     newProfile = ModelProfiles(
         user_id=user_id,
