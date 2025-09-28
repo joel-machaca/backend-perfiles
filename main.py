@@ -12,7 +12,6 @@ Base.metadata.create_all(bind=engine)
 load_dotenv()
 
 
-
 origins=["https://manejo-de-perfiles-profesionales.vercel.app"]
 
 app.add_middleware(
