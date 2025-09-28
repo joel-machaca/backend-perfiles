@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from schemas.profiles import ProfilePublic,ProfilesUpdate
 from database.db import get_db
 from models.profiles import Profiles as ModelProfiles
+from dotenv import load_dotenv
 from supabase import create_client
 import os
 
@@ -12,7 +13,7 @@ router=APIRouter(
     prefix='/profiles',
     tags=['profiles']
 )
-
+load_dotenv()
 
 SUPABASE_URL = "https://dswakzcxymsbalttunzq.supabase.co"
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY") 
