@@ -46,11 +46,12 @@ npm run dev
 ### (BACKEND)
 
 Crea un archivo `.env` en la carpeta del "backend" y añade las variables necesarias.
-
+```bash
 FRONTEND_URL= aqui va la url del frontend paso (1)
 SUPABASE_KEY= aqui va la clave "API KEY" de supabase (2)
 SUPABASE_URL= aqui va la url del proyecto (3)
 DATABASE_URL= aqui va la url de la base de datos (4)
+```
 
 Crear y activar entorno virtual:
 ```bash
