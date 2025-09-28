@@ -15,7 +15,7 @@ router=APIRouter(
 )
 load_dotenv()
 
-SUPABASE_URL = "https://dswakzcxymsbalttunzq.supabase.co"
+SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY") 
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
