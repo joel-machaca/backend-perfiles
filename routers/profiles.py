@@ -31,12 +31,12 @@ def create_profiles(
     galeria: List[UploadFile] = File([]),
     db: Session = Depends(get_db)
 ):
-    # Subir foto principal a Supabase
+    
     principal_data = foto_principal.file.read()
     supabase.storage.from_('uploads').upload(foto_principal.filename, principal_data)
     foto_url = supabase.storage.from_('uploads').get_public_url(foto_principal.filename)
 
-    # Subir galería
+
     galeria_urls = []
     for img in galeria:
         data = img.file.read()
