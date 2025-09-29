@@ -32,9 +32,12 @@ def create_profiles(
     db: Session = Depends(get_db)
 ):
     
-    principal_data = foto_principal.file.read()
-    supabase.storage.from_('uploads').upload(foto_principal.filename, principal_data)
-    foto_url = supabase.storage.from_('uploads').get_public_url(foto_principal.filename)
+    try:
+        principal_data = foto_principal.file.read()
+        supabase.storage.from_('uploads').upload(foto_principal.filename, principal_data)
+        foto_url = supabase.storage.from_('uploads').get_public_url(foto_principal.filename)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error subiendo foto principal: {e}")
 
 
     galeria_urls = []
