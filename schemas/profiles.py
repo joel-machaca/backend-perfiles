@@ -22,12 +22,7 @@ class ProfilesUpdate(BaseModel):
     foto_principal: Optional[str] = None
     galeria: Optional[List[str]] = None
 
-class ProfilesOut(ProfilesBase):
-    id: int
-    user_id: int
 
-    # class Config:
-    #     orm_mode = True
 
 class ProfilePublic(ProfilesBase):
     id: int

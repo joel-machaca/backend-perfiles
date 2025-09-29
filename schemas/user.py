@@ -10,10 +10,3 @@ class UserCreate(UserBase):
 class UserLogin(UserBase):
     pass
 
-class UserOut(BaseModel):
-    id:int
-    email:EmailStr
-    registration_date:str
-
-    # class Config:
-    #     orm_mode=True
