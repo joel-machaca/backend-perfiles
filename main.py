@@ -12,7 +12,7 @@ Base.metadata.create_all(bind=engine)
 
 load_dotenv()
 
-FRONTEND_URL=os.getenv("FRONTEND_URL")
+FRONTEND_URL=os.getenv("FRONTEND_URL","http://localhost:5173")
 
 origins=[FRONTEND_URL]
 
